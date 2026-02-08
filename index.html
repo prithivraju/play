@@ -3,7 +3,7 @@
   <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Knowledge Engine v4 - AI-Powered Learning Platform</title>
+        <title>Knowledge Engine v4</title>
       <style>
                 * {
                               margin: 0;
@@ -12,370 +12,277 @@
                 }
 
                 body {
-                              font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+                              font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
+                              background: #0a0a0a;
+                              color: #e4e4e7;
                               line-height: 1.6;
-                              color: #2c3e50;
-                              background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
                               min-height: 100vh;
+                              display: flex;
+                              align-items: center;
+                              justify-content: center;
                               padding: 40px 20px;
+                              font-size: 16px;
+                              -webkit-font-smoothing: antialiased;
                 }
 
                 .container {
-                              max-width: 1200px;
-                              margin: 0 auto;
-                }
-
-                header {
-                              text-align: center;
-                              color: white;
-                              margin-bottom: 50px;
-                              animation: fadeInDown 0.8s ease-out;
+                              max-width: 680px;
+                              width: 100%;
                 }
 
                 h1 {
-                              font-size: 3.5em;
-                              margin-bottom: 10px;
-                              text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+                              font-size: 48px;
+                              font-weight: 600;
+                              color: #fafafa;
+                              margin-bottom: 16px;
+                              letter-spacing: -0.02em;
                 }
 
                 .subtitle {
-                              font-size: 1.5em;
-                              opacity: 0.95;
-                              margin-bottom: 10px;
+                              font-size: 20px;
+                              color: #a1a1aa;
+                              margin-bottom: 48px;
+                              font-weight: 400;
                 }
 
-                .tagline {
-                              font-size: 1.1em;
-                              opacity: 0.85;
+                .description {
+                              font-size: 17px;
+                              color: #d4d4d8;
+                              margin-bottom: 32px;
+                              line-height: 1.7;
                 }
 
-                @keyframes fadeInDown {
-                              from {
-                                                opacity: 0;
-                                                transform: translateY(-30px);
-                              }
-                              to {
-                                                opacity: 1;
-                                                transform: translateY(0);
-                              }
+                .modes {
+                              margin: 48px 0;
                 }
 
-                .modes-section {
-                              background: white;
-                              border-radius: 15px;
-                              padding: 50px;
-                              margin-bottom: 40px;
-                              box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-                              animation: fadeInUp 0.8s ease-out;
+                .mode-title {
+                              font-size: 14px;
+                              text-transform: uppercase;
+                              letter-spacing: 0.05em;
+                              color: #71717a;
+                              margin-bottom: 24px;
+                              font-weight: 500;
                 }
 
-                @keyframes fadeInUp {
-                              from {
-                                                opacity: 0;
-                                                transform: translateY(30px);
-                              }
-                              to {
-                                                opacity: 1;
-                                                transform: translateY(0);
-                              }
-                }
-
-                .modes-section h2 {
-                              text-align: center;
-                              font-size: 2.5em;
-                              margin-bottom: 40px;
-                              color: #2c3e50;
-                }
-
-                .modes-grid {
-                              display: grid;
-                              grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-                              gap: 30px;
-                              margin-bottom: 30px;
-                }
-
-                .mode-card {
-                              background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                .mode-item {
+                              background: #18181b;
+                              border: 1px solid #27272a;
                               border-radius: 12px;
-                              padding: 40px;
-                              color: white;
-                              text-align: center;
-                              transition: transform 0.3s ease, box-shadow 0.3s ease;
-                              cursor: pointer;
-                              position: relative;
-                              overflow: hidden;
+                              padding: 24px;
+                              margin-bottom: 12px;
+                              transition: all 0.2s ease;
                 }
 
-                .mode-card:hover {
-                              transform: translateY(-10px);
-                              box-shadow: 0 20px 40px rgba(102, 126, 234, 0.4);
+                .mode-item:hover {
+                              border-color: #3f3f46;
+                              background: #1c1c1f;
                 }
 
-                .mode-card.casual {
-                              background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                }
-
-                .mode-card.study {
-                              background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-                }
-
-                .mode-card.deep {
-                              background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-                }
-
-                .mode-icon {
-                              font-size: 3em;
-                              margin-bottom: 15px;
-                }
-
-                .mode-card h3 {
-                              font-size: 1.8em;
-                              margin-bottom: 15px;
-                }
-
-                .mode-card p {
-                              font-size: 1.05em;
-                              opacity: 0.95;
-                              margin-bottom: 20px;
-                }
-
-                .features {
-                              background: rgba(0, 0, 0, 0.05);
-                              border-radius: 10px;
-                              padding: 30px;
-                              margin-bottom: 40px;
-                }
-
-                .features h3 {
-                              color: #2c3e50;
-                              margin-bottom: 15px;
-                              font-size: 1.3em;
-                }
-
-                .feature-list {
-                              display: grid;
-                              grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-                              gap: 20px;
-                }
-
-                .feature-item {
-                              display: flex;
-                              align-items: flex-start;
-                              gap: 15px;
-                }
-
-                .feature-item .icon {
-                              font-size: 1.5em;
-                              flex-shrink: 0;
-                }
-
-                .feature-item p {
-                              font-size: 1em;
-                              color: #555;
-                }
-
-                .tech-stack {
-                              background: white;
-                              border-radius: 15px;
-                              padding: 40px;
-                              margin-bottom: 40px;
-                              box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-                }
-
-                .tech-stack h2 {
-                              text-align: center;
-                              font-size: 2em;
-                              margin-bottom: 30px;
-                              color: #2c3e50;
-                }
-
-                .tech-items {
-                              display: grid;
-                              grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-                              gap: 20px;
-                }
-
-                .tech-item {
-                              background: #f8f9fa;
-                              padding: 20px;
-                              border-radius: 10px;
-                              border-left: 4px solid #667eea;
-                              text-align: center;
-                }
-
-                .tech-item .tech-name {
-                              font-weight: bold;
-                              color: #2c3e50;
+                .mode-item h3 {
+                              font-size: 18px;
+                              font-weight: 600;
+                              color: #fafafa;
                               margin-bottom: 8px;
                 }
 
-                .tech-item .tech-desc {
-                              font-size: 0.95em;
-                              color: #666;
+                .mode-item p {
+                              font-size: 15px;
+                              color: #a1a1aa;
+                              line-height: 1.6;
                 }
 
-                .cta-section {
-                              text-align: center;
-                              padding: 40px;
-                              background: white;
-                              border-radius: 15px;
-                              box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+                .tech-stack {
+                              margin: 48px 0;
                 }
 
-                .cta-section h2 {
-                              font-size: 2em;
-                              margin-bottom: 20px;
-                              color: #2c3e50;
+                .tech-list {
+                              display: flex;
+                              flex-wrap: wrap;
+                              gap: 12px;
+                              margin-top: 24px;
                 }
 
-                .cta-button {
-                              display: inline-block;
-                              background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                              color: white;
-                              padding: 15px 50px;
-                              border: none;
-                              border-radius: 50px;
-                              font-size: 1.1em;
-                              cursor: pointer;
-                              text-decoration: none;
-                              transition: transform 0.3s ease, box-shadow 0.3s ease;
-                              margin: 10px;
+                .tech-tag {
+                              background: #18181b;
+                              border: 1px solid #27272a;
+                              padding: 8px 16px;
+                              border-radius: 8px;
+                              font-size: 14px;
+                              color: #d4d4d8;
+                }
+
+                .setup-section {
+                              background: #18181b;
+                              border: 1px solid #27272a;
+                              border-radius: 12px;
+                              padding: 32px;
+                              margin: 48px 0;
+                }
+
+                .setup-section h2 {
+                              font-size: 20px;
                               font-weight: 600;
+                              color: #fafafa;
+                              margin-bottom: 20px;
                 }
 
-                .cta-button:hover {
-                              transform: translateY(-3px);
-                              box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+                .setup-steps {
+                              color: #a1a1aa;
+                              line-height: 1.8;
                 }
 
-                footer {
-                              text-align: center;
-                              color: white;
-                              margin-top: 50px;
-                              padding-top: 30px;
-                              border-top: 1px solid rgba(255, 255, 255, 0.2);
+                .setup-steps ol {
+                              padding-left: 20px;
+                              margin: 16px 0;
                 }
 
-                footer p {
-                              margin: 8px 0;
-                              opacity: 0.9;
+                .setup-steps li {
+                              margin-bottom: 8px;
                 }
 
-                .badge {
-                              display: inline-block;
-                              background: rgba(255, 255, 255, 0.2);
-                              color: white;
-                              padding: 5px 15px;
-                              border-radius: 20px;
-                              font-size: 0.9em;
-                              margin-top: 15px;
+                .setup-steps code {
+                              background: #0a0a0a;
+                              padding: 2px 8px;
+                              border-radius: 4px;
+                              font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
+                              font-size: 14px;
+                              color: #e4e4e7;
+                }
+
+                .links {
+                              display: flex;
+                              gap: 16px;
+                              margin-top: 48px;
+                }
+
+                .link-button {
+                              display: inline-flex;
+                              align-items: center;
+                              padding: 12px 24px;
+                              background: #fafafa;
+                              color: #0a0a0a;
+                              text-decoration: none;
+                              border-radius: 8px;
                               font-weight: 500;
+                              font-size: 15px;
+                              transition: all 0.2s ease;
+                }
+
+                .link-button:hover {
+                              background: #e4e4e7;
+                              transform: translateY(-1px);
+                }
+
+                .link-button.secondary {
+                              background: #18181b;
+                              color: #fafafa;
+                              border: 1px solid #27272a;
+                }
+
+                .link-button.secondary:hover {
+                              background: #1c1c1f;
+                              border-color: #3f3f46;
+                }
+
+                .note {
+                              background: #18181b;
+                              border-left: 2px solid #3f3f46;
+                              padding: 16px 20px;
+                              margin: 32px 0;
+                              border-radius: 4px;
+                }
+
+                .note p {
+                              font-size: 15px;
+                              color: #a1a1aa;
+                }
+
+                @media (max-width: 640px) {
+                              h1 {
+                                                font-size: 36px;
+                              }
+
+                              .subtitle {
+                                                font-size: 18px;
+                              }
+
+                              .links {
+                                                flex-direction: column;
+                              }
+
+                              .link-button {
+                                                width: 100%;
+                                                justify-content: center;
+                              }
                 }
             </style>
   </head>
   <body>
         <div class="container">
-                  <header>
-                                <h1>Knowledge Engine v4</h1>
-                              <p class="subtitle">AI-Powered Adaptive Learning Platform</p>p>
-                              <p class="tagline">Transform how you learn with intelligent content analysis and personalized study modes</p>p>
-                  </header>
+                  <h1>Knowledge Engine v4</h1>
+                <p class="subtitle">AI-powered adaptive learning platform</p>p>
                 
-                <div class="modes-section">
-                            <h2>Three Powerful Learning Modes</h2>
-                            <div class="modes-grid">
-                                            <div class="mode-card casual">
-                                                                <div class="mode-icon">📚</div>div>
-                                                                <h3>Just Read</h3>
-                                                                <p>Bite-sized chunks with vivid imagery. Pure reading flow, no interruptions.</p>
-                                                                <div class="badge">Casual Mode</div>div>
-                                            </div>div>
-                                            
-                                            <div class="mode-card study">
-                                                                <div class="mode-icon">🎯</div>div>
-                                                                <h3>Study Mode</h3>
-                                                                <p>Chunks + recall questions to test your understanding as you go. Active learning at its best.</p>
-                                                                <div class="badge">Interactive</div>div>
-                                            </div>div>
-                                            
-                                            <div class="mode-card deep">
-                                                                <div class="mode-icon">🔬</div>div>
-                                                                <h3>Deep Dive</h3>
-                                                                <p>Study mode + explorer. Ask questions anytime, cross-reference freely, go deeper.</p>
-                                                                <div class="badge">Advanced</div>div>
-                                            </div>div>
+                <p class="description">
+                    An intelligent React application that transforms how you learn from PDF documents. 
+                    Choose your learning style, from casual reading to deep exploration with AI-powered quizzes and cross-references.
+                </p>p>
+                
+                <div class="note">
+                            <p><strong>Note:</strong> This is a React application that requires local setup. It cannot run directly in the browser as a static page.</p>
+                </div>div>
+                
+                <div class="modes">
+                            <div class="mode-title">Learning Modes</div>div>
+                            
+                            <div class="mode-item">
+                                            <h3>Just Read</h3>
+                                            <p>Bite-sized chunks with vivid imagery. Pure reading flow without interruptions.</p>
                             </div>div>
                             
-                            <div class="features">
-                                            <h3>Key Features</h3>
-                                            <div class="feature-list">
-                                                                <div class="feature-item">
-                                                                                        <span class="icon">📄</span>span>
-                                                                                        <p>PDF file processing with intelligent chunking</p>
-                                                                </div>div>
-                                                                <div class="feature-item">
-                                                                                        <span class="icon">🤖</span>span>
-                                                                                        <p>Powered by Claude Sonnet AI for smart analysis</p>
-                                                                </div>div>
-                                                                <div class="feature-item">
-                                                                                        <span class="icon">🎨</span>span>
-                                                                                        <p>Color-coded visual learning experiences</p>
-                                                                </div>div>
-                                                                <div class="feature-item">
-                                                                                        <span class="icon">✅</span>span>
-                                                                                        <p>Dynamic quiz generation in Study Mode</p>
-                                                                </div>div>
-                                                                <div class="feature-item">
-                                                                                        <span class="icon">🔗</span>span>
-                                                                                        <p>Cross-reference capabilities in Deep Dive</p>
-                                                                </div>div>
-                                                                <div class="feature-item">
-                                                                                        <span class="icon">⚡</span>span>
-                                                                                        <p>Adaptive learning based on your progress</p>
-                                                                </div>div>
-                                            </div>div>
+                            <div class="mode-item">
+                                            <h3>Study Mode</h3>
+                                            <p>Content chunks combined with recall questions to test understanding as you learn.</p>
+                            </div>div>
+                            
+                            <div class="mode-item">
+                                            <h3>Deep Dive</h3>
+                                            <p>Interactive exploration mode. Ask questions anytime, cross-reference freely, and go deeper into topics.</p>
                             </div>div>
                 </div>div>
                 
                 <div class="tech-stack">
-                            <h2>Technology Stack</h2>
-                            <div class="tech-items">
-                                            <div class="tech-item">
-                                                                <div class="tech-name">React</div>div>
-                                                                <div class="tech-desc">Modern UI framework for interactive components</div>div>
-                                            </div>div>
-                                            <div class="tech-item">
-                                                                <div class="tech-name">Claude Sonnet API</div>div>
-                                                                <div class="tech-desc">Advanced AI model for content analysis</div>div>
-                                            </div>div>
-                                            <div class="tech-item">
-                                                                <div class="tech-name">PDF.js</div>div>
-                                                                <div class="tech-desc">JavaScript PDF processing library</div>div>
-                                            </div>div>
-                                            <div class="tech-item">
-                                                                <div class="tech-name">Custom CSS</div>div>
-                                                                <div class="tech-desc">Beautiful, responsive design system</div>div>
-                                            </div>div>
+                            <div class="mode-title">Built With</div>div>
+                            <div class="tech-list">
+                                            <span class="tech-tag">React</span>span>
+                                            <span class="tech-tag">Claude Sonnet AI</span>span>
+                                            <span class="tech-tag">PDF.js</span>span>
+                                            <span class="tech-tag">JavaScript</span>span>
                             </div>div>
                 </div>div>
                 
-                <div class="cta-section">
-                            <h2>Ready to Transform Your Learning?</h2>
-                            <p style="margin-bottom: 30px; color: #666;">Upload a PDF and choose your learning mode to get started</p>
-                            <a href="https://github.com/prithivraju/play" class="cta-button">View on GitHub</a>a>
-                            <a href="https://github.com/prithivraju/play/blob/main/knowledge-engine%202.jsx" class="cta-button">View Source Code</a>a>
+                <div class="setup-section">
+                            <h2>Getting Started</h2>
+                            <div class="setup-steps">
+                                            <p>To run this application locally:</p>
+                                            <ol>
+                                                                  <li>Clone the repository: <code>git clone https://github.com/prithivraju/play.git</code></li>
+                                                                <li>Install dependencies: <code>npm install</code></li>
+                                                                <li>Add your Claude API key to environment variables</li>
+                                                                <li>Start the development server: <code>npm start</code></li>
+                                                                <li>Upload a PDF and choose your learning mode</li>
+                                            </ol>
+                            </div>div>
                 </div>div>
                 
-                <footer>
-                              <p><strong>Knowledge Engine v4</strong> - An intelligent learning companion</p>p>
-                            <p>Built with React, Claude AI, and PDF.js</p>
-                            <p>© 2026 Prithiv. All rights reserved.</p>
-                </footer>
+                <div class="links">
+                            <a href="https://github.com/prithivraju/play" class="link-button">View Repository</a>a>
+                            <a href="https://github.com/prithivraju/play/blob/main/knowledge-engine%202.jsx" class="link-button secondary">View Source</a>a>
+                </div>div>
         </div>div>
   </body>
-</html>html></p></p></strong>
-                </footer></p></p></h2></h1>
-                  </header>
+</html>html></code></li></li></code></code></li>
+                                            </ol></strong></p></h1>
   </body>
       </style></title>
   </head>
